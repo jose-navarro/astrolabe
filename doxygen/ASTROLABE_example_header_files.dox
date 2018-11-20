@@ -1,0 +1,114 @@
+/** \page ASTROLABE_example_header_files Some sample ASTROLABE header files
+
+Below, a few examples show some ASTROLABE header files.
+
+Observation-events based file (observations, parameters, observation residuals, instruments). Socket data channel. Both host and port are shown.
+
+\code
+<?xml version="1.0" encoding="UTF-8"?>
+<astrolabe-header_file xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  version="1.0" xsi:noNamespaceSchemaLocation="astrolabe-header_file.xsd">
+    <lineage version="1.0">
+      <id> id1 </id>
+      <name> Example of an ASTROLABE header file </name>
+      <author>
+        <item> J. Navarro </item>
+      </author>
+      <organization> CTTC </organization>
+      <department> GEON </department>
+      <date_time>2016-10-18T11:41:47-05:00</date_time>
+      <ref_document>
+        <item> ASTROLABE ICD </item>
+      </ref_document>
+      <project> GEMMA </project>
+      <task> GEMMA parsing library </task>
+      <remarks> Sample file created to show how ASTROLABE header files look like. </remarks>
+  </lineage>
+  <data>
+    <device type="obs-e_file" format="socket"> localhost:2000 </device>
+  </data>
+</astrolabe-header_file>
+\endcode
+
+The same kind of data than above. Binary file channel. The base name for the split external files is shown.
+
+\code
+<?xml version="1.0" encoding="UTF-8"?>
+<astrolabe-header_file xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  version="1.0" xsi:noNamespaceSchemaLocation="astrolabe-header_file.xsd">
+    <lineage version="1.0">
+      <id> id1 </id>
+      <name> Example of an ASTROLABE header file </name>
+      <author>
+        <item> J. Navarro </item>
+      </author>
+      <organization> CTTC </organization>
+      <department> GEON </department>
+      <date_time>2016-10-18T11:41:47-05:00</date_time>
+      <ref_document>
+        <item> ASTROLABE ICD </item>
+      </ref_document>
+      <project> GEMMA </project>
+      <task> GEMMA parsing library </task>
+      <remarks> Sample file created to show how ASTROLABE header files look like. </remarks>
+  </lineage>
+  <data>
+    <device type="obs-e_file" format="binary_file"> the_external_name.obs </device>
+  </data>
+</astrolabe-header_file>
+\endcode
+
+The same example than above, but in this case a text file is used for the data channel.
+
+\code
+<?xml version="1.0" encoding="UTF-8"?>
+<astrolabe-header_file xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  version="1.0" xsi:noNamespaceSchemaLocation="astrolabe-header_file.xsd">
+    <lineage version="1.0">
+      <id> id1 </id>
+      <name> Example of an ASTROLABE header file </name>
+      <author>
+        <item> J. Navarro </item>
+      </author>
+      <organization> CTTC </organization>
+      <department> GEON </department>
+      <date_time>2016-10-18T11:41:47-05:00</date_time>
+      <ref_document>
+        <item> ASTROLABE ICD </item>
+      </ref_document>
+      <project> GEMMA </project>
+      <task> GEMMA parsing library </task>
+      <remarks> Sample file created to show how ASTROLABE header files look like. </remarks>
+  </lineage>
+  <data>
+    <device type="obs-e_file" format="text_file"> the_external_name.obs </device>
+  </data>
+</astrolabe-header_file>
+\endcode
+
+Correlation matrix based file (for trajectory observations or rll, for trajectory parameters or rxx, for observation residuals or rvv ). Text file data channel. Note the "type" attribute in the \<device\> tag. Here, "r-matrix_file" is written instead of "obs-e_file" to denote that the data files contain r-matrix based data instead of observation-events.
+\code
+<astrolabe-header_file xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  version="1.0" xsi:noNamespaceSchemaLocation="astrolabe-header_file.xsd">
+  <lineage version="1.0">
+    <id> ID0 </id>
+    <name> Sample r-matrix file </name>
+    <author>
+      <item> r_matrix writer tester program </item>
+    </author>
+    <organization> The name of the organization goes here </organization>
+    <department> The name of the department goes here </department>
+    <date_time>2016-12-21T12:03:41.000</date_time>
+    <ref_document>
+      <item> As many entries as desired may be added to refer to related documentation </item>
+    </ref_document>
+    <project> The name of the project goes here </project>
+    <task> The name of the task goes here </task>
+    <remarks> Any interesting remarks go here </remarks>
+  </lineage>
+  <data>
+    <device type="r-matrix_file" format="text_file"> test_data.rxx </device>
+  </data>
+</astrolabe-header_file>
+\endcode
+*/

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<astrolabe-header_file xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  version="1.0" xsi:noNamespaceSchemaLocation="astrolabe-header_file.xsd">
+    <lineage version="1.0">
+      <id> id1 </id>
+      <name> Example of an ASTROLABE header file </name>
+      <author>
+        <item> J. Navarro </item>
+      </author>
+      <organization> CTTC </organization>
+      <department> GEON </department>
+      <date_time>2016-10-18T11:41:47-05:00</date_time>
+      <ref_document>
+        <item> ASTROLABE ICD </item>
+      </ref_document>
+      <project> GEMMA </project>
+      <task> GEMMA parsing library </task>
+      <remarks> Sample file created to show how ASTROLABE header files look like. </remarks>
+  </lineage>
+  <data>
+    <device type="obs-e_file" format="socket"> localhost:2000 </device>
+  </data>
+</astrolabe-header_file>

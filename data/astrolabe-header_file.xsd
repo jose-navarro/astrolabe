@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by XMLSPY 2004 Professional Ed. Release 2, Installed Multi for 10 users (SOFTWARE AG) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="astrolabe-header_file">
+		<xs:annotation>
+			<xs:documentation>Header file pointing to diverse kinds of ASTROLABE data files</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="lineage"/>
+				<xs:element ref="data"/>
+			</xs:sequence>
+			<xs:attribute name="version" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="\d+\.\d+"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="data">
+		<xs:annotation>
+			<xs:documentation>Specification of data type and format</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element ref="device"/>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="device">
+		<xs:annotation>
+			<xs:documentation>Device specification for external, non embedded, data</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="format" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="binary_file"/>
+								<xs:enumeration value="BINARY_FILE"/>
+								<xs:enumeration value="text_file"/>
+								<xs:enumeration value="TEXT_FILE"/>
+								<xs:enumeration value="socket"/>
+								<xs:enumeration value="SOCKET"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+					<xs:attribute name="type" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="obs-e_file"/>
+								<xs:enumeration value="OBS-E_FILE"/>
+								<xs:enumeration value="r-matrix_file"/>
+								<xs:enumeration value="R-MATRIX_FILE"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="id" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Identifier</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="item" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Item included in a list</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="lineage">
+		<xs:annotation>
+			<xs:documentation>Affiliation metadata</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="id" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Identifier</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="name" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Name</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="author" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>List of authors</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="item" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="organization" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Organization</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="department" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Department</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="date_time" type="xs:dateTime" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Date and time</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ref_document" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>List of reference documents</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="item" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="project" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Project</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="task" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Task</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="remarks" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Remarks, comments, miscellaneous information</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:all>
+			<xs:attribute name="version" use="optional">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="\d+\.\d+"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

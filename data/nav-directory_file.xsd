@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by XMLSPY 2004 Professional Ed. Release 2, Installed Multi for 10 users (SOFTWARE AG) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="input">
+		<xs:annotation>
+			<xs:documentation>Input files or streams</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element ref="options" minOccurs="0"/>
+				<xs:element ref="metadata"/>
+				<xs:element ref="observations"/>
+				<xs:element ref="instruments" minOccurs="0"/>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="instruments">
+		<xs:annotation>
+			<xs:documentation>Instrument data specification</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element ref="obs_e"/>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="item" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Item included in a list</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="lineage">
+		<xs:annotation>
+			<xs:documentation>Affiliation metadata</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="id" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Identifier</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="name" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Name</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="author" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>List of authors</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="item" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="organization" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Organization</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="department" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Department</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="date_time" type="xs:dateTime" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Date and time</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ref_document" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>List of reference documents</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="item" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="project" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Project</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="task" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Task</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="remarks" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Remarks, comments, miscellaneous information</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:all>
+			<xs:attribute name="version" use="optional">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="\d+\.\d+"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="log" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Process log file</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="nav-directory_file">
+		<xs:annotation>
+			<xs:documentation>Navigation directory for ASTROLABE datasets</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element ref="lineage"/>
+				<xs:element ref="input"/>
+				<xs:element ref="output"/>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="nav_metadata" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Metadata file</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="obs_e" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Observation-events file or stream</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="observations">
+		<xs:annotation>
+			<xs:documentation>Observation data specification</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element ref="obs_e"/>
+				<xs:element ref="tr_obs_correlation_Rll" minOccurs="0"/>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="metadata">
+		<xs:annotation>
+			<xs:documentation>Metadata specification</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="nav_metadata" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="op_file">
+		<xs:annotation>
+			<xs:documentation>Processing options file</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="format" type="xs:string" use="required"/>
+					<xs:attribute name="version" type="xs:string" use="optional"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="options">
+		<xs:annotation>
+			<xs:documentation>Processing options specification</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element ref="op_file"/>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="output">
+		<xs:annotation>
+			<xs:documentation>Output files or streams</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element ref="log" minOccurs="0"/>
+				<xs:element ref="states"/>
+				<xs:element ref="residuals" minOccurs="0"/>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="residuals">
+		<xs:annotation>
+			<xs:documentation>Residual data specification</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element ref="obs_e"/>
+				<xs:element ref="tr_res_correlation_Rvv" minOccurs="0"/>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="states">
+		<xs:annotation>
+			<xs:documentation>State (parameter) data specification</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element ref="obs_e"/>
+				<xs:element ref="tr_states_correlation_Rxx" minOccurs="0"/>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="tr_obs_correlation_Rll" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>File with correlation matrices for observations</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="tr_res_correlation_Rvv" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>File with correlation matrices for observation residuals</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="tr_states_correlation_Rxx" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>File with correlation matrices for states (parameters)</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

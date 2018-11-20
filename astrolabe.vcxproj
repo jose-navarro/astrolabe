@@ -1,0 +1,394 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\adp_DOMparser.cpp" />
+    <ClCompile Include="src\adp_DOMparser_error_handler.cpp" />
+    <ClCompile Include="src\adp_domtree_utilities.cpp" />
+    <ClCompile Include="src\adp_parsing_errors.cpp" />
+    <ClCompile Include="src\astrolabe_contract_violation.cpp" />
+    <ClCompile Include="src\astrolabe_exception.cpp" />
+    <ClCompile Include="src\astrolabe_header_file_writer.cpp" />
+    <ClCompile Include="src\astrolabe_IO.cpp" />
+    <ClCompile Include="src\astrolabe_parse_error.cpp" />
+    <ClCompile Include="src\astrolabe_postcondition_violation.cpp" />
+    <ClCompile Include="src\astrolabe_precondition_violation.cpp" />
+    <ClCompile Include="src\astrolabe_string_utilities.cpp" />
+    <ClCompile Include="src\astrolabe_time.cpp" />
+    <ClCompile Include="src\gp_astrolabe_header_file_data.cpp" />
+    <ClCompile Include="src\gp_astrolabe_header_file_parser.cpp" />
+    <ClCompile Include="src\gp_clist.cpp" />
+    <ClCompile Include="src\gp_clist_item.cpp" />
+    <ClCompile Include="src\gp_clist_item_type.cpp" />
+    <ClCompile Include="src\gp_compression_manager.cpp" />
+    <ClCompile Include="src\gp_covariance.cpp" />
+    <ClCompile Include="src\gp_ref_code.cpp" />
+    <ClCompile Include="src\gp_ilist.cpp" />
+    <ClCompile Include="src\gp_ispec.cpp" />
+    <ClCompile Include="src\gp_llist.cpp" />
+    <ClCompile Include="src\gp_lspec.cpp" />
+    <ClCompile Include="src\gp_metadata.cpp" />
+    <ClCompile Include="src\gp_metadata_parser.cpp" />
+    <ClCompile Include="src\gp_mspec.cpp" />
+    <ClCompile Include="src\gp_navdir_data.cpp" />
+    <ClCompile Include="src\gp_navdir_data_parser.cpp" />
+    <ClCompile Include="src\gp_navdir_data_writer.cpp" />
+    <ClCompile Include="src\gp_navfile_manager.cpp" />
+    <ClCompile Include="src\gp_plist.cpp" />
+    <ClCompile Include="src\gp_plist_item.cpp" />
+    <ClCompile Include="src\gp_pspec.cpp" />
+    <ClCompile Include="src\gp_ref.cpp" />
+    <ClCompile Include="src\gp_ref_code_element.cpp" />
+    <ClCompile Include="src\gp_scale.cpp" />
+    <ClCompile Include="src\gp_sub_m_list.cpp" />
+    <ClCompile Include="src\gp_timespec.cpp" />
+    <ClCompile Include="src\gp_tspec.cpp" />
+    <ClCompile Include="src\gp_unit.cpp" />
+    <ClCompile Include="src\gp_units_manager.cpp" />
+    <ClCompile Include="src\gp_utils.cpp" />
+    <ClCompile Include="src\instrument_file_reader_txt_forward.cpp" />
+    <ClCompile Include="src\instrument_file_writer_txt.cpp" />
+    <ClCompile Include="src\instrument_reader.cpp" />
+    <ClCompile Include="src\instrument_socket_reader.cpp" />
+    <ClCompile Include="src\instrument_socket_writer.cpp" />
+    <ClCompile Include="src\instrument_writer.cpp" />
+    <ClCompile Include="src\lineage_data.cpp" />
+    <ClCompile Include="src\observation_file_reader_bin_backward.cpp" />
+    <ClCompile Include="src\observation_file_reader_bin_forward.cpp" />
+    <ClCompile Include="src\observation_file_reader_txt_backward.cpp" />
+    <ClCompile Include="src\observation_file_reader_txt_forward.cpp" />
+    <ClCompile Include="src\observation_file_writer_bin.cpp" />
+    <ClCompile Include="src\observation_file_writer_txt.cpp" />
+    <ClCompile Include="src\observation_file_writer_txt_embedded.cpp" />
+    <ClCompile Include="src\observation_reader.cpp" />
+    <ClCompile Include="src\observation_socket_reader.cpp" />
+    <ClCompile Include="src\observation_socket_writer.cpp" />
+    <ClCompile Include="src\observation_writer.cpp" />
+    <ClCompile Include="src\obs_e_based_file_reader.cpp" />
+    <ClCompile Include="src\obs_e_based_file_reader_bin.cpp" />
+    <ClCompile Include="src\obs_e_based_file_reader_bin_forward.cpp" />
+    <ClCompile Include="src\obs_e_based_file_reader_txt.cpp" />
+    <ClCompile Include="src\obs_e_based_file_reader_txt_forward.cpp" />
+    <ClCompile Include="src\obs_e_based_file_writer.cpp" />
+    <ClCompile Include="src\obs_e_based_file_writer_bin.cpp" />
+    <ClCompile Include="src\obs_e_based_file_writer_txt.cpp" />
+    <ClCompile Include="src\obs_e_based_socket_reader.cpp" />
+    <ClCompile Include="src\obs_e_based_socket_writer.cpp" />
+    <ClCompile Include="src\obs_residuals_file_reader_bin_forward.cpp" />
+    <ClCompile Include="src\obs_residuals_file_reader_txt_forward.cpp" />
+    <ClCompile Include="src\obs_residuals_file_writer_bin.cpp" />
+    <ClCompile Include="src\obs_residuals_file_writer_txt.cpp" />
+    <ClCompile Include="src\obs_residuals_reader.cpp" />
+    <ClCompile Include="src\obs_residuals_writer.cpp" />
+    <ClCompile Include="src\parameter_file_reader_bin_forward.cpp" />
+    <ClCompile Include="src\parameter_file_reader_txt_forward.cpp" />
+    <ClCompile Include="src\parameter_file_writer_bin.cpp" />
+    <ClCompile Include="src\parameter_file_writer_txt.cpp" />
+    <ClCompile Include="src\parameter_reader.cpp" />
+    <ClCompile Include="src\parameter_socket_reader.cpp" />
+    <ClCompile Include="src\parameter_socket_writer.cpp" />
+    <ClCompile Include="src\parameter_writer.cpp" />
+    <ClCompile Include="src\PracticalSocket.cpp" />
+    <ClCompile Include="src\r_matrix_based_file_reader.cpp" />
+    <ClCompile Include="src\r_matrix_based_file_reader_bin.cpp" />
+    <ClCompile Include="src\r_matrix_based_file_reader_txt.cpp" />
+    <ClCompile Include="src\r_matrix_based_file_writer.cpp" />
+    <ClCompile Include="src\r_matrix_file_reader_bin_backward.cpp" />
+    <ClCompile Include="src\r_matrix_file_reader_bin_forward.cpp" />
+    <ClCompile Include="src\r_matrix_file_reader_txt_backward.cpp" />
+    <ClCompile Include="src\r_matrix_file_reader_txt_forward.cpp" />
+    <ClCompile Include="src\r_matrix_file_writer_bin.cpp" />
+    <ClCompile Include="src\r_matrix_file_writer_txt.cpp" />
+    <ClCompile Include="src\r_matrix_reader.cpp" />
+    <ClCompile Include="src\r_matrix_socket_reader.cpp" />
+    <ClCompile Include="src\r_matrix_socket_writer.cpp" />
+    <ClCompile Include="src\r_matrix_writer.cpp" />
+    <ClCompile Include="src\segmented_file_utils.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\adp_DOMparser.hpp" />
+    <ClInclude Include="src\adp_DOMparser_error_handler.hpp" />
+    <ClInclude Include="src\adp_domtree_utilities.hpp" />
+    <ClInclude Include="src\adp_parsing_errors.hpp" />
+    <ClInclude Include="src\adp_stringx.hpp" />
+    <ClInclude Include="src\astrolabe_contracts.hpp" />
+    <ClInclude Include="src\astrolabe_contract_violation.hpp" />
+    <ClInclude Include="src\astrolabe_exception.hpp" />
+    <ClInclude Include="src\astrolabe_exceptions.hpp" />
+    <ClInclude Include="src\astrolabe_header_file_writer.hpp" />
+    <ClInclude Include="src\astrolabe_IO.hpp" />
+    <ClInclude Include="src\astrolabe_parse_error.hpp" />
+    <ClInclude Include="src\astrolabe_postcondition_violation.hpp" />
+    <ClInclude Include="src\astrolabe_precondition_violation.hpp" />
+    <ClInclude Include="src\astrolabe_string_utilities.hpp" />
+    <ClInclude Include="src\astrolabe_time.hpp" />
+    <ClInclude Include="src\gp_astrolabe_header_file_data.hpp" />
+    <ClInclude Include="src\gp_astrolabe_header_file_parser.hpp" />
+    <ClInclude Include="src\gp_clist.hpp" />
+    <ClInclude Include="src\gp_clist_item.hpp" />
+    <ClInclude Include="src\gp_clist_item_type.hpp" />
+    <ClInclude Include="src\gp_compression_manager.hpp" />
+    <ClInclude Include="src\gp_covariance.hpp" />
+    <ClInclude Include="src\gp_ref_code.hpp" />
+    <ClInclude Include="src\gp_ilist.hpp" />
+    <ClInclude Include="src\gp_ispec.hpp" />
+    <ClInclude Include="src\gp_llist.hpp" />
+    <ClInclude Include="src\gp_lspec.hpp" />
+    <ClInclude Include="src\gp_metadata.hpp" />
+    <ClInclude Include="src\gp_metadata_parser.hpp" />
+    <ClInclude Include="src\gp_mspec.hpp" />
+    <ClInclude Include="src\gp_navdir_data.hpp" />
+    <ClInclude Include="src\gp_navdir_data_parser.hpp" />
+    <ClInclude Include="src\gp_navdir_data_writer.hpp" />
+    <ClInclude Include="src\gp_navfile_manager.hpp" />
+    <ClInclude Include="src\gp_plist.hpp" />
+    <ClInclude Include="src\gp_plist_item.hpp" />
+    <ClInclude Include="src\gp_pspec.hpp" />
+    <ClInclude Include="src\gp_ref.hpp" />
+    <ClInclude Include="src\gp_ref_code_element.hpp" />
+    <ClInclude Include="src\gp_scale.hpp" />
+    <ClInclude Include="src\gp_sub_m_list.hpp" />
+    <ClInclude Include="src\gp_timespec.hpp" />
+    <ClInclude Include="src\gp_tspec.hpp" />
+    <ClInclude Include="src\gp_unit.hpp" />
+    <ClInclude Include="src\gp_units_manager.hpp" />
+    <ClInclude Include="src\gp_utils.hpp" />
+    <ClInclude Include="src\instrument_file_reader_txt_forward.hpp" />
+    <ClInclude Include="src\instrument_file_writer_txt.hpp" />
+    <ClInclude Include="src\instrument_reader.hpp" />
+    <ClInclude Include="src\instrument_socket_reader.hpp" />
+    <ClInclude Include="src\instrument_socket_writer.hpp" />
+    <ClInclude Include="src\instrument_writer.hpp" />
+    <ClInclude Include="src\lineage_data.hpp" />
+    <ClInclude Include="src\observation_file_reader_bin_backward.hpp" />
+    <ClInclude Include="src\observation_file_reader_bin_forward.hpp" />
+    <ClInclude Include="src\observation_file_reader_txt_backward.hpp" />
+    <ClInclude Include="src\observation_file_reader_txt_forward.hpp" />
+    <ClInclude Include="src\observation_file_writer_bin.hpp" />
+    <ClInclude Include="src\observation_file_writer_txt.hpp" />
+    <ClInclude Include="src\observation_file_writer_txt_embedded.hpp" />
+    <ClInclude Include="src\observation_reader.hpp" />
+    <ClInclude Include="src\observation_socket_reader.hpp" />
+    <ClInclude Include="src\observation_socket_writer.hpp" />
+    <ClInclude Include="src\observation_writer.hpp" />
+    <ClInclude Include="src\obs_e_based_file_reader.hpp" />
+    <ClInclude Include="src\obs_e_based_file_reader_bin.hpp" />
+    <ClInclude Include="src\obs_e_based_file_reader_bin_forward.hpp" />
+    <ClInclude Include="src\obs_e_based_file_reader_txt.hpp" />
+    <ClInclude Include="src\obs_e_based_file_reader_txt_forward.hpp" />
+    <ClInclude Include="src\obs_e_based_file_writer.hpp" />
+    <ClInclude Include="src\obs_e_based_file_writer_bin.hpp" />
+    <ClInclude Include="src\obs_e_based_file_writer_txt.hpp" />
+    <ClInclude Include="src\obs_e_based_socket_reader.hpp" />
+    <ClInclude Include="src\obs_e_based_socket_writer.hpp" />
+    <ClInclude Include="src\obs_residuals_file_reader_bin_forward.hpp" />
+    <ClInclude Include="src\obs_residuals_file_reader_txt_forward.hpp" />
+    <ClInclude Include="src\obs_residuals_file_writer_bin.hpp" />
+    <ClInclude Include="src\obs_residuals_file_writer_txt.hpp" />
+    <ClInclude Include="src\obs_residuals_reader.hpp" />
+    <ClInclude Include="src\obs_residuals_writer.hpp" />
+    <ClInclude Include="src\parameter_file_reader_bin_forward.hpp" />
+    <ClInclude Include="src\parameter_file_reader_txt_forward.hpp" />
+    <ClInclude Include="src\parameter_file_writer_bin.hpp" />
+    <ClInclude Include="src\parameter_file_writer_txt.hpp" />
+    <ClInclude Include="src\parameter_reader.hpp" />
+    <ClInclude Include="src\parameter_socket_reader.hpp" />
+    <ClInclude Include="src\parameter_socket_writer.hpp" />
+    <ClInclude Include="src\parameter_writer.hpp" />
+    <ClInclude Include="src\PracticalSocket.h" />
+    <ClInclude Include="src\r_matrix_based_file_reader.hpp" />
+    <ClInclude Include="src\r_matrix_based_file_reader_bin.hpp" />
+    <ClInclude Include="src\r_matrix_based_file_reader_txt.hpp" />
+    <ClInclude Include="src\r_matrix_based_file_writer.hpp" />
+    <ClInclude Include="src\r_matrix_file_reader_bin_backward.hpp" />
+    <ClInclude Include="src\r_matrix_file_reader_bin_forward.hpp" />
+    <ClInclude Include="src\r_matrix_file_reader_txt_backward.hpp" />
+    <ClInclude Include="src\r_matrix_file_reader_txt_forward.hpp" />
+    <ClInclude Include="src\r_matrix_file_writer_bin.hpp" />
+    <ClInclude Include="src\r_matrix_file_writer_txt.hpp" />
+    <ClInclude Include="src\r_matrix_reader.hpp" />
+    <ClInclude Include="src\r_matrix_socket_reader.hpp" />
+    <ClInclude Include="src\r_matrix_socket_writer.hpp" />
+    <ClInclude Include="src\r_matrix_writer.hpp" />
+    <ClInclude Include="src\segmented_file_utils.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\astrolabe_exceptions.pro" />
+    <None Include="src\astrolabe_exceptions.pro.user" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{BDDD8BFC-EF1E-46A8-B2B2-2A03814AACAD}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>astrolabe</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <IncludePath>.\src;..\opensource_libraries\udunits2\headers;..\opensource_libraries\ZipLib\headers;..\opensource_libraries\xercesc3\headers;$(IncludePath)</IncludePath>
+    <TargetName>$(ProjectName)_dmtd</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <IncludePath>.\src;..\opensource_libraries\udunits2\headers;..\opensource_libraries\ZipLib\headers;..\opensource_libraries\xercesc3\headers;$(IncludePath)</IncludePath>
+    <TargetName>$(ProjectName)_mtd</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>.\src;..\opensource_libraries\udunits2\headers;..\opensource_libraries\ZipLib\headers;..\opensource_libraries\xercesc3\headers;$(IncludePath)</IncludePath>
+    <TargetName>$(ProjectName)_x64_dmtd</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>.\src;..\opensource_libraries\udunits2\headers;..\opensource_libraries\ZipLib\headers;..\opensource_libraries\xercesc3\headers;$(IncludePath)</IncludePath>
+    <TargetName>$(ProjectName)_x64_mtd</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4005;4290;4996;4275;4251;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <PostBuildEvent>
+      <Command>CALL $(ProjectDir)postbuild.bat $(Platform) $(Configuration) $(TargetName)</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copy headers and binaries to standard folders</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_LIB;WIN64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4005;4290;4996;4275;4251;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <PostBuildEvent>
+      <Command>CALL $(ProjectDir)postbuild.bat $(Platform) $(Configuration) $(TargetName)</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copy headers and binaries to standard folders</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4005;4290;4996;4275;4251;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <PostBuildEvent>
+      <Command>CALL $(ProjectDir)postbuild.bat $(Platform) $(Configuration) $(TargetName)</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copy headers and binaries to standard folders</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_LIB;WIN64;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4005;4290;4996;4275;4251;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <PostBuildEvent>
+      <Command>CALL $(ProjectDir)postbuild.bat $(Platform) $(Configuration) $(TargetName)</Command>
+    </PostBuildEvent>
+    <PostBuildEvent>
+      <Message>Copy headers and binaries to standard folders</Message>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

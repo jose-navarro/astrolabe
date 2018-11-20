@@ -1,0 +1,367 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<nav_metadata_file xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="nav_metadata.xsd"> 
+  <l_spec s="a">
+    <type> PR_t </type>
+    <lineage>
+      <id>  PR_t_spec  </id>
+      <name> Pseudo-range measurements </name>
+    </lineage>
+    <toolbox> dynamicSURVEY </toolbox>
+    <dimension> 1 </dimension>
+    <ref>
+      <ref_frame_VC>   - </ref_frame_VC>
+      <coor_system_VC> - </coor_system_VC>
+    </ref>
+    <time_spec>
+      <ref>
+        <coor_ref_frame_VC>   GPStime </coor_ref_frame_VC>
+      </ref>
+      <units> s </units>
+    </time_spec>
+    <units> m </units>
+    <c>     2.9305 </c>
+    <s>     1 </s>
+  </l_spec>
+  <l_spec s="a">
+    <type>  SP3_SAT </type>
+    <lineage>
+      <id>   SP3_SAT_spec  </id>
+      <name> Precise satellite orbit </name>
+    </lineage>
+    <toolbox> dynamicSURVEY </toolbox>
+    <dimension> 30 </dimension>
+    <ref>
+      <ref_frame_VC>   WGS84 </ref_frame_VC>
+      <coor_system_VC> cartesian </coor_system_VC>
+    </ref>
+   <time_spec>
+      <ref>
+        <coor_ref_frame_VC>   GPStime </coor_ref_frame_VC>
+      </ref>
+      <units> s </units>
+    </time_spec>
+    <units> km, km, km, km, km, km, km, km, km, km, km, km, km, km, km, km, km, km, km, km, km, km, km, km, km, km, km, km, km, km </units>
+    <c>     0.000025 </c>
+    <s>     1 </s>
+  </l_spec>
+  <l_spec s="a">
+    <type>  CLK_SAT </type>
+    <lineage>
+      <id>   CLK_SAT_spec  </id>
+      <name> Precise satellite clock bias </name>
+    </lineage>
+    <toolbox> dynamicSURVEY </toolbox>
+    <dimension> 2 </dimension>
+    <ref>
+      <coor_ref_frame_VC> - </coor_ref_frame_VC>
+    </ref>
+    <time_spec>
+      <ref>
+        <coor_ref_frame_VC>   GPStime </coor_ref_frame_VC>
+      </ref>
+      <units> s </units>
+    </time_spec>
+    <units> s, s </units>
+    <c>     1e-11 </c>
+    <s>     1 </s>
+  </l_spec>
+  <p_spec s="a">
+    <type>  x_3D_t </type>
+    <lineage>
+      <id>   x_3D_t_spec  </id>
+      <name> Position at time t </name>
+    </lineage>
+    <toolbox> dynamicSURVEY </toolbox>
+    <dimension> 3 </dimension>
+    <ref>
+      <ref_frame_VC>   ECEF </ref_frame_VC>
+      <coor_system_VC> cartesian </coor_system_VC>
+    </ref>
+    <time_spec>
+      <ref>
+        <coor_ref_frame_VC>   GPStime </coor_ref_frame_VC>
+      </ref>
+      <units> s </units>
+    </time_spec>
+    <units> m, mm, km </units>
+  </p_spec>
+  <p_spec s="a">
+    <type>  dt_r </type>
+    <lineage>
+      <id>   dt_r_spec  </id>
+      <name> Receiver clock bias </name>
+    </lineage>
+    <toolbox> dynamicSURVEY </toolbox>
+    <dimension> 1 </dimension>
+    <ref>
+     <coor_ref_frame_VC>   -  </coor_ref_frame_VC>
+    </ref>
+    <time_spec>
+      <ref>
+        <coor_ref_frame_VC>   GPStime </coor_ref_frame_VC>
+      </ref>
+      <units> s </units>
+    </time_spec>
+    <units> s </units>
+  </p_spec>
+  <p_spec s="a">
+    <type>  SP3_SAT </type>
+    <lineage>
+      <id>   SP3_SAT_spec  </id>
+      <name> Precise satellite orbit </name>
+    </lineage>
+    <toolbox> dynamicSURVEY </toolbox>
+    <dimension> 30 </dimension>
+    <ref>
+      <ref_frame_VC>   WGS84 </ref_frame_VC>
+      <coor_system_VC> cartesian </coor_system_VC>
+    </ref>
+    <time_spec>
+      <ref>
+        <coor_ref_frame_VC>   GPStime </coor_ref_frame_VC>
+      </ref>
+      <units> s </units>
+    </time_spec>
+    <units> km, km, km, km, km, km, km, km, km, km, km, km, km, km, km, km, km, km, km, km, km, km, km, km, km, km, km, km, km, km </units>
+  </p_spec>
+  <p_spec s="a">
+    <type>  CLK_SAT </type>
+    <lineage>
+      <id>   CLK_SAT_spec  </id>
+      <name> Precise satellite clock bias </name>
+    </lineage>
+    <toolbox> dynamicSURVEY </toolbox>
+    <dimension> 2 </dimension>
+    <ref>
+      <coor_ref_frame_VC> - </coor_ref_frame_VC>
+    </ref>
+    <time_spec>
+      <ref>
+        <coor_ref_frame_VC>   GPStime </coor_ref_frame_VC>
+      </ref>
+      <units> s </units>
+    </time_spec>
+    <units> s, s </units>
+    <c>     1e-11 </c>
+  </p_spec>
+  <p_spec s="a">
+    <type>  D_Tr_zw </type>
+    <lineage>
+      <id>   D_Tr_zw_spec  </id>
+      <name> Tropospheric zenith wet delay correction </name>
+    </lineage>
+    <toolbox> dynamicSURVEY </toolbox>
+    <dimension> 1 </dimension>
+    <ref>
+      <ref_frame_VC>   - </ref_frame_VC>
+      <coor_system_VC> - </coor_system_VC>
+    </ref>
+    <time_spec>
+      <ref>
+        <coor_ref_frame_VC>   GPStime </coor_ref_frame_VC>
+      </ref>
+      <units> s </units>
+    </time_spec>
+    <units> m </units>
+  </p_spec>
+  <p_spec s="a">
+    <type>  DI  </type>
+    <lineage>
+      <id>  DI_spec </id>
+      <name> Ionospheric slant residual correction </name>
+    </lineage>
+    <toolbox> dynamicSURVEY </toolbox>
+    <dimension> 1 </dimension>
+    <ref>
+      <ref_frame_VC>   - </ref_frame_VC>
+      <coor_system_VC> - </coor_system_VC>
+    </ref>
+    <time_spec>
+      <ref>
+        <coor_ref_frame_VC>   GPStime </coor_ref_frame_VC>
+      </ref>
+      <units> s </units>
+    </time_spec>
+    <units> - </units>
+    <c>     0.001 </c>
+  </p_spec>
+  <p_spec s="a">
+    <type>  rcv_b </type>
+    <lineage>
+      <id>   rcv_b_spec  </id>
+      <name> Intersystem receiver clock code bias </name>
+    </lineage>
+    <toolbox> dynamicSURVEY </toolbox>
+    <dimension> 1 </dimension>
+    <ref>
+      <coor_ref_frame_VC>   - </coor_ref_frame_VC>
+    </ref>
+    <time_spec>
+      <ref>
+        <coor_ref_frame_VC>   GPStime </coor_ref_frame_VC>
+      </ref>
+      <units> s </units>
+    </time_spec>
+    <units> s </units>
+  </p_spec>
+  <i_spec s="a">
+    <type> DCB </type>
+    <lineage>
+      <id>   DCB_spec  </id>
+      <name> Differential code bias </name>
+    </lineage>
+    <toolbox> dynamicSURVEY </toolbox>
+    <time_spec>
+      <ref>
+        <coor_ref_frame_VC>   GPStime </coor_ref_frame_VC>
+      </ref>
+      <units> s </units>
+    </time_spec>
+    <c_list>
+      <dimension> 2 </dimension>
+      <item n="1">
+        <type> matrix(2) </type>
+        <ref>
+          <ref_frame_VC>   - </ref_frame_VC>
+          <coor_system_VC> - </coor_system_VC>
+        </ref>
+        <units> MHz </units>
+      </item>
+      <item n="2">
+        <type> scalar </type>
+        <ref>
+          <coor_ref_frame_VC>   - </coor_ref_frame_VC>
+        </ref>
+        <units> s </units>
+      </item>
+    </c_list>
+  </i_spec>
+  <i_spec s="a">
+    <type> TEC_map </type>
+    <lineage>
+      <id>   TEC_map_spec  </id>
+      <name> Ionospheric total electron content (vertical) map </name>
+    </lineage>
+    <toolbox> dynamicSURVEY </toolbox>
+    <time_spec>
+      <ref>
+        <coor_ref_frame_VC>   GPStime </coor_ref_frame_VC>
+      </ref>
+      <units> s </units>
+    </time_spec>
+    <c_list>
+      <dimension> 1 </dimension>
+      <item n="1">
+        <type> matrix(51,83) </type>
+        <ref>
+          <ref_frame_VC>   - </ref_frame_VC>
+          <coor_system_VC> - </coor_system_VC>
+        </ref>
+        <units> m </units>
+      </item>
+    </c_list>
+  </i_spec>
+  <m_spec s="a">
+    <type> pseudorange_SP3 </type>
+    <lineage>
+      <id>   pseudorange_SP3_spec  </id>
+      <name> Precise pseudo-range GNSS model </name>
+    </lineage>
+    <toolbox> dynamicSURVEY </toolbox>
+	<dynamic> YES </dynamic>
+    <l_list>
+      <dimension> 1 </dimension>
+      <item n="1"> 
+        <id> PR_t_spec </id>
+      </item>
+    </l_list>
+    <p_list>
+      <dimension> 7 </dimension>
+      <item n="1">
+        <id> x_3D_t_spec </id>
+        <role> free </role>
+      </item>
+      <item n="2">
+        <id> dt_r_spec </id>
+        <role> free </role>
+      </item>
+      <item n="3">
+        <id> SP3_SAT_spec </id>
+        <role> constant </role>
+      </item>
+      <item n="4">
+        <id> CLK_SAT_spec </id>
+        <role> constant </role>
+      </item>
+      <item n="5">
+        <id> D_Tr_zw_spec </id>
+        <role> free </role>
+      </item>
+      <item n="6">
+        <id> DI_spec </id>
+        <role> free </role>
+      </item>
+      <item n="7">
+        <id> rcv_b_spec </id>
+        <role> free </role>
+      </item>
+    </p_list>
+   <i_list>
+     <dimension> 3 </dimension>
+     <item n="1"> 
+       <id> DCB_spec </id>
+     </item>
+     <item n="2"> 
+       <id> TEC_map_spec </id>
+     </item>
+     <item n="3"> 
+       <id> TEC_map_spec </id>
+     </item>
+   </i_list>
+  </m_spec>
+   <m_spec s="a">
+    <type> SP3_SAT </type>
+    <lineage>
+      <id>   SP3_SAT_spec  </id>
+      <name> Precise satellite orbit pseudo-observation model </name>
+    </lineage>
+    <toolbox> dynamicSURVEY </toolbox>
+	<dynamic> YES </dynamic>
+    <l_list>
+      <dimension> 1 </dimension>
+      <item n="1"> 
+        <id> SP3_SAT_spec </id>
+      </item>
+    </l_list>
+    <p_list>
+      <dimension> 1 </dimension>
+      <item n="1">
+        <id> SP3_SAT_spec </id>
+        <role> free </role>
+      </item>
+    </p_list>
+  </m_spec>
+   <m_spec s="a">
+    <type> CLK_SAT </type>
+    <lineage>
+      <id>   CLK_SAT_spec  </id>
+      <name> Precise satellite clock bias pseudo-observation model </name>
+    </lineage>
+    <toolbox> dynamicSURVEY </toolbox>
+	<dynamic> YES </dynamic>
+    <l_list>
+      <dimension> 1 </dimension>
+      <item n="1"> 
+        <id> CLK_SAT_spec </id>
+      </item>
+    </l_list>
+    <p_list>
+      <dimension> 1 </dimension>
+      <item n="1">
+        <id> CLK_SAT_spec </id>
+        <role> free </role>
+      </item>
+    </p_list>
+  </m_spec>
+</nav_metadata_file>

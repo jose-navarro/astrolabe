@@ -1,0 +1,42 @@
+/** \page codingexamples Coding and data examples
+
+The following pages show different coding examples. The first group deal with the (recommended) generic classes that are able to read and write all kinds of ASTROLABE data entities through any possible channel; in fact, any software module relying on the ASTROLABE library should use only these generic classes to read or write data. Note that all the generic reader and writer examples are very similar; this is so because of the uniform API included in the ASTROLABE library. However, as many examples as possible have been provided in order to facilitate the work of the developers.
+
+No example has been provided for reading or writing observations residuals. However, the interested reader may check the examples provided for parameters since, as stated in the corresponding help pages, both cases are almost identical and there are very few changes to make to transform a parameter reader or writer into an observation residuals equivalent.
+
+For the sake of completeness, a few examples using specific classes are included in the second group; note, however, that there are very few situations where the use of specific readers and writers may be of interest. In fact, using these go against the ASTROLABE specification, since the use of header files is not possible, so their use is highly discouraged.
+
+Then, an example showing how to read navigation metadata files is included.
+
+Finally, actual examples of ASTROLABE header files and navigation metadata files are provided.
+
+- Reading and writing data: generic classes examples (recommended).
+  - Observation files.
+    - \subpage rwobs
+    - \subpage wobs
+  - Parameter (state) files.
+    - \subpage rwpars
+	- \subpage wpars
+  - Correlation matrix files.
+    - \subpage rwrxx
+    - \subpage wrxx
+  - Instrument files.
+    - \subpage rwins
+	- \subpage wins
+  - Observation residuals.
+    - See examples for parameter files above.
+	
+- Reading and writing data: specific classes examples (discouraged).
+  - \subpage txttobinspecif
+  - \subpage sockettotxtspecif
+  
+- Reading and writing metadata.
+  - \subpage readingnavigationmetadatafiles
+  - \subpage readingnavigationdirectoryfiles
+  - \subpage readingheaderfiles
+
+- Data and metadata examples.
+  - \subpage ASTROLABE_example_header_files
+  - \subpage ASTROLABE_example_navigation_metadata_file
+  - \subpage ASTROLABE_example_navigation_directory_file
+*/

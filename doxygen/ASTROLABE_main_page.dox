@@ -1,0 +1,89 @@
+/** \mainpage The ASTROLABE library
+
+The ASTROLABE library is a C++ implementation of the specification found in "ASTROLABE. Interface Control Document version 1.0". References to the documentation describing ASTROLABE may be found in \ref astrolabedocuments.
+
+This library provides, essentially, two groups of classes:
+
+- Those that deal with ASTROLABE metadata, that is, that are able to read ASTROLABE metadata files and afterwards provide the calling modules with the necessary methods to access the information thus loaded and
+- a set of reader and writer classes that are able to deal with ASTROLABE data: observations, parameters (a. k. a. states), instruments, observation residuals and correlation matrices (see \ref ASTROLABE_data_IO).
+
+\warning Do not forget to check \ref ASTROLABE_limitations and \ref ASTROLABE_whats_new to check what's are the limitations and new features included in each release.
+
+\warning ASTROLABE includes the <a href="http://cs.ecs.baylor.edu/~donahoo/practical/CSockets/practical/"> PracticalSocket</a> and the <a href="http://xtl.sourceforge.net/"> XTL</a> libraries' source code; the idea is to reduce the amount of external libraries needed to build ASTROLABE-based applications. If your application must rely on any of these two libraries, do not include them; these are automatically available when linking to ASTROLABE.
+
+Concerning DATA readers and writers, it is worth to note that ASTROLABE provides a set of generic, high level reader and writer classes for all the existing data entities (observations, parameters, instruments, observation residuals and correlation matrices). These are:
+ 
+  - instrument_reader
+  - instrument_writer
+  - obs_residuals_reader
+  - obs_residuals_writer
+  - observation_reader
+  - observation_writer
+  - parameter_reader
+  - parameter_writer
+  - r_matrix_reader
+  - r_matrix_writer
+
+The use of the generic classes frees the programmer from the concern of having to choose between the specific classes designed to deal with the different storage formats in which the data are to be read or written. See below for further information about these specific classes.
+  
+Another advantage of using these generic classes, is that header files are read / written automatically, and also, the appropriate specific reader or writer class (again, see below) is also automatically selected. Generic classes are the only way to guarantee that data created with this library is fully compliant with the ASTROLABE data model. Therefore, their use is highly ENCOURAGED.
+
+Nonetheless, specific reader and writers have been provided for each combination of data entity (observation, parameter, etc.), format (binary or text file, sockets) and reading direction (forward or backwards). Obviously, these specific classes must exist so the generic ones may rely on the former to do their task. However, the direct use of specific classes is highly DISCOURAGED.
+
+Note, however, that not all the possible combinations of formats and data entities exist in the list of specific classes:
+
+- Instruments: no binary reader or writers have been provided. Otherwise, it seems not to make sense to include binary format for this data entity, since instrument files will much probably contain a few records that don't justify the existence of a format targeted at saving disk space.
+- Observations' residuals. Neither socket reader nor writer has been included.
+
+More specifically, the full list of specific classes is:
+
+- instrument_file_reader_txt_forward
+- instrument_file_writer_txt
+- instrument_socket_reader
+- instrument_socket_writer
+- obs_residuals_file_reader_bin_forward
+- obs_residuals_file_reader_txt_forward
+- obs_residuals_file_writer_bin
+- obs_residuals_file_writer_txt
+- observation_file_reader_bin_backward
+- observation_file_reader_bin_forward
+- observation_file_reader_txt_backward
+- observation_file_reader_txt_forward
+- observation_file_writer_bin
+- observation_file_writer_txt
+- observation_socket_reader
+- observation_socket_writer
+- parameter_file_reader_bin_forward
+- parameter_file_reader_txt_forward
+- parameter_file_writer_bin
+- parameter_file_writer_txt
+- parameter_socket_reader
+- parameter_socket_writer
+- r_matrix_file_reader_bin_backward
+- r_matrix_file_reader_bin_forward
+- r_matrix_file_reader_txt_backward
+- r_matrix_file_reader_txt_forward
+- r_matrix_file_writer_bin
+- r_matrix_file_writer_txt
+- r_matrix_socket_reader
+- r_matrix_socket_writer
+  
+Note how file reader classes make use of the infixes "bin" and "txt" to specify the kind of file (binary or text) these deal with. Moreover, the use of the suffixes "forward" and "backward" indicate how the corresponding file is read (that is, in forward or backwards directions).
+
+Not all the data entities are equipped with backward readers. This is so because these files (as parameters) are not normally read in backwards direction when processing trajectories (that is, the absence of these backwards readers is not due to an incomplete implementation of the library).	
+ 
+It is worthy to remark that the use of specific reader or writer classes is highly DISCOURAGED. These, for instance, (1) do not deal with the mandatory header files that must accompany each data file, (2) nor take care of splitting data into several chunks when needed. Nonetheless, these classes are made explicitly available just in case a specific reader or writer is needed by whatever purpose. The user of these classes must be aware of the limitations just stated and is responsible for reading / writing the necessary header files as well as to read or write split data files.
+  
+Finally, the (compressed) navigation file may be handled by means of class gp_navfile_manager. Use it to manage (create and compress, decompress and extract) navigation files.
+
+Concerning METADATA, the main classes to check are:
+
+- Navigation metadata files: gp_metadata_parser and gp_metadata, the parser and data entity class respectively.
+- Navigation directory files. Use class gp_navdir_data_parser to parse these files; gp_navdir_data is the data entity class. To write navigation directory files, use gp_navdir_data_writer.
+- (Data) header files: gp_astrolabe_header_file_parser and gp_astrolabe_header_file_data; once more, the first class implements the parser and the second one corresponds to the entity class to hold the information once parsed. There exist also a writer for header files. The class to use is astrolabe_header_file_writer. However, header files are read or written automatically by the generic read and write classes described above. Therefore, the direct use of gp_astrolabe_header_file_parser and gp_astrolabe_header_file_data is not necessary unless the specific reader and writer classes mentioned above are used by the calling module.
+
+A few examples have been included in this documentation. See \ref codingexamples for a list of these examples.
+
+The ASTROLABE library relies on a series of external libraries. See \ref ASTROLABE_dependencies for details.
+ 
+*/

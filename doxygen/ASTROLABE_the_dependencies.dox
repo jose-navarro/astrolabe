@@ -1,0 +1,20 @@
+/** \page ASTROLABE_dependencies The dependencies of the ASTROLABE library
+
+The ASTROLABE library relies, directly or indirectly, on the following open source libraries (headers must be available):
+
+- <a href="http://xerces.apache.org/xerces-c/">Xerces C++ XML parser (version 3)</a>.
+- <a href="https://www.unidata.ucar.edu/downloads/udunits/index.jsp">UDUNITS 2</a>.
+- <a href="https://github.com/libexpat/libexpat/releases">Expat XML parser 2</a>.
+- <a href="https://bitbucket.org/wbenny/ziplib">Petr Benes' ZipLib</a>
+
+Software components built using the ASTROLABE library must include, therefore, the binary versions of the libraries listed above in the link process.
+
+Additionally, and for the sake of simplicity, ASTROLABE includes the SOURCE CODE of several open source library among its own source files. These libraries are:
+
+- <a href="http://cs.ecs.baylor.edu/~donahoo/practical/CSockets/practical/">PracticalSocket</a> 
+- <a href="http://xtl.sourceforge.net/">XTL - eXternalization Template Library</a>
+
+Therefore, if your application needs to use any of these (PracticalSocket, XTL), do NOT include them in your project, since these are already part of ASTROLABE. Otherwise, duplicate symbol issues will arise during the linking phase.
+
+In windows environments, library ws32_2.lib must be also input to the linker. This is not necessary in Linux environments.
+*/

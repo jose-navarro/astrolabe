@@ -1,0 +1,25 @@
+/** \page ASTROLABE_limitations The limitations of this release of ASTROLABE
+
+The following is the list of limitations for the current version of ASTROLABE.
+
+- Version 0.99.1
+
+  - The Linux version is already available, so the limitation present in version 0.99 has been removed.
+
+- Version 0.99
+
+  - This is the first version of the ASTROLABE library that fully implements the ASTROLABE ICD v1.0 for Windows platforms only. No version for the Linux operating system is available yet.
+
+- Version 0.98
+
+  - Coordinate reference frames, reference frames or coordinate system codes / combinations of these are not validated. Again, the (list of) codes is returned as is to the calling module (through the appropriate methods of relevant classes) with no validation at all.
+
+- Version 0.91
+
+  - The navigation directory (metadata) file is not yet implemented.
+  - Correlation matrix data files are not yet fully implemented. It is possible to read and write text versions of these only.
+  - Readers and writers for files with headers plus embedded data are not available and much probably they will never be.
+  - The navigation file, that is, the compressed one containing all ASTROLABE files for a single run / project / dataset is not yet implemented.
+  - Units are not checked. A string with the unit specification is returned by the corresponding classes when retrieved. Therefore, it is the responsibility of the calling module to check its correctness.
+  - Coordinate reference frames, reference frames or coordinate system codes / combinations of these are not validated. Again, the (list of) codes is returned as is to the calling module (through the appropriate methods of relevant classes) with no validation at all.
+*/

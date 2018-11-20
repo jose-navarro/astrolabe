@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by XMLSPY 2004 Professional Ed. Release 2, Installed Multi for 10 users (SOFTWARE AG) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="c" type="doublelist">
+		<xs:annotation>
+			<xs:documentation>Covariance matrix for the observations</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="dimension" type="xs:positiveInteger">
+		<xs:annotation>
+			<xs:documentation>Dimension specifier</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:simpleType name="doublelist">
+		<xs:annotation>
+			<xs:documentation>List of double values</xs:documentation>
+		</xs:annotation>
+		<xs:list itemType="xs:double"/>
+	</xs:simpleType>
+	<xs:element name="i_spec">
+		<xs:annotation>
+			<xs:documentation>Instrument specification</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="type" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Type of the objec t being described</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="toolbox" minOccurs="0"/>
+				<xs:element ref="lineage"/>
+				<xs:element ref="time_spec"/>
+				<xs:element name="c_list">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="dimension"/>
+							<xs:element name="item" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="type" type="xs:string"/>
+										<xs:element ref="ref"/>
+										<xs:element ref="units"/>
+										<xs:element ref="c" minOccurs="0"/>
+										<xs:element ref="s" minOccurs="0"/>
+									</xs:all>
+									<xs:attribute name="n" type="xs:positiveInteger" use="required"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element ref="t_spec" minOccurs="0"/>
+			</xs:all>
+			<xs:attribute name="s" use="optional" default="a">
+				<xs:simpleType>
+					<xs:restriction base="xs:token">
+						<xs:enumeration value="a"/>
+						<xs:enumeration value="r"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="item" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Item included in a list</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="l_spec">
+		<xs:annotation>
+			<xs:documentation>Observation specification</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="type" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Type of the object being described</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="toolbox" minOccurs="0"/>
+				<xs:element ref="lineage"/>
+				<xs:element ref="dimension"/>
+				<xs:element ref="ref"/>
+				<xs:element ref="time_spec"/>
+				<xs:element ref="units"/>
+				<xs:element ref="c" minOccurs="0"/>
+				<xs:element ref="s" minOccurs="0"/>
+				<xs:element ref="t_spec" minOccurs="0"/>
+			</xs:all>
+			<xs:attribute name="s" use="optional" default="a">
+				<xs:simpleType>
+					<xs:restriction base="xs:token">
+						<xs:enumeration value="a"/>
+						<xs:enumeration value="r"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="lineage">
+		<xs:annotation>
+			<xs:documentation>Affiliation metadata</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="id" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Identifier</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="name" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Name</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="author" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>List of authors</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="item" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="organization" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Organization</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="department" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Department</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="date_time" type="xs:dateTime" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Date and time</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ref_document" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>List of reference documents</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="item" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="project" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Project</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="task" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Task</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="remarks" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Remarks, comments, miscellaneous information</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:all>
+			<xs:attribute name="version" use="optional">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="\d+\.\d+"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="m_spec">
+		<xs:annotation>
+			<xs:documentation>Model specification</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="type" type="xs:string"/>
+				<xs:element ref="toolbox" minOccurs="0"/>
+				<xs:element ref="lineage"/>
+				<xs:element name="dynamic">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:pattern value="\s*yes\s*"/>
+							<xs:pattern value="\s*YES\s*"/>
+							<xs:pattern value="\s*no\s*"/>
+							<xs:pattern value="\s*NO\s*"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="l_list">
+					<xs:annotation>
+						<xs:documentation>List of iobservations</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="dimension"/>
+							<xs:element name="item" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Observation item</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="id" type="xs:string">
+											<xs:annotation>
+												<xs:documentation>Observation identifier</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+									</xs:all>
+									<xs:attribute name="n" type="xs:positiveInteger" use="required"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="p_list">
+					<xs:annotation>
+						<xs:documentation>List of parameters</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="dimension"/>
+							<xs:element name="item" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Parameter item</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="id" type="xs:string">
+											<xs:annotation>
+												<xs:documentation>Parameter identifier</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="role">
+											<xs:annotation>
+												<xs:documentation>Role played by the parameter</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:pattern value="\s*free\s*"/>
+													<xs:pattern value="\s*FREE\s*"/>
+													<xs:pattern value="\s*constant\s*"/>
+													<xs:pattern value="\s*CONSTANT\s*"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:all>
+									<xs:attribute name="n" type="xs:positiveInteger" use="required"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="i_list" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>List of instruments</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="dimension"/>
+							<xs:element name="item" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Instrument item</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="id" type="xs:string">
+											<xs:annotation>
+												<xs:documentation>Instrument identifier</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+									</xs:all>
+									<xs:attribute name="n" type="xs:positiveInteger" use="required"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="sub-m_list" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>List of submodels</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="dimension"/>
+							<xs:element name="item" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Submodel item</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:all>
+										<xs:element name="id" type="xs:string">
+											<xs:annotation>
+												<xs:documentation>Submodel identifier</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+									</xs:all>
+									<xs:attribute name="n" type="xs:positiveInteger" use="required"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:all>
+			<xs:attribute name="s" type="xs:token" use="optional" default="a"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="nav_metadata_file">
+		<xs:annotation>
+			<xs:documentation>The NAVEGA metadata file</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element ref="l_spec"/>
+				<xs:element ref="p_spec"/>
+				<xs:element ref="i_spec"/>
+				<xs:element ref="m_spec"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="p_spec">
+		<xs:annotation>
+			<xs:documentation>Parameter specification</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="type" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Type of the object being described</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="toolbox" minOccurs="0"/>
+				<xs:element ref="lineage"/>
+				<xs:element ref="dimension"/>
+				<xs:element ref="ref"/>
+				<xs:element ref="time_spec"/>
+				<xs:element ref="units"/>
+				<xs:element ref="c" minOccurs="0"/>
+				<xs:element ref="s" minOccurs="0"/>
+				<xs:element ref="t_spec" minOccurs="0"/>
+			</xs:all>
+			<xs:attribute name="s" use="optional" default="a">
+				<xs:simpleType>
+					<xs:restriction base="xs:token">
+						<xs:enumeration value="a"/>
+						<xs:enumeration value="r"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ref">
+		<xs:annotation>
+			<xs:documentation>Coordinate reference frame or reference frame plus coordinate system </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice>
+				<xs:element name="coor_ref_frame_VC" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Comma separated list of valid codes for coordinate reference frames</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:sequence>
+					<xs:element name="ref_frame_VC" type="xs:string">
+						<xs:annotation>
+							<xs:documentation>Comma separated list of valid codes for reference frames</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="coor_system_VC" type="xs:string" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Comma separated list of valid codes for coordinate systems</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="s" type="doublelist">
+		<xs:annotation>
+			<xs:documentation>Positive scale factors for the standard deviations of the covariance matrix of the observations</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="t_spec">
+		<xs:annotation>
+			<xs:documentation>Tag values specification</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:all>
+				<xs:element ref="dimension"/>
+				<xs:element ref="ref"/>
+				<xs:element ref="units"/>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="time_spec" type="time_specType">
+		<xs:annotation>
+			<xs:documentation>Time specification</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="toolbox" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Toolbox the object belongs to</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="units" type="xs:string">
+		<xs:annotation>
+			<xs:documentation>Comma separated list of units for the observation vector</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="time_specType">
+		<xs:all>
+			<xs:element ref="ref"/>
+			<xs:element ref="units"/>
+		</xs:all>
+		<xs:attribute name="s" use="optional" default="a">
+			<xs:simpleType>
+				<xs:restriction base="xs:token">
+					<xs:enumeration value="a"/>
+					<xs:enumeration value="r"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+</xs:schema>

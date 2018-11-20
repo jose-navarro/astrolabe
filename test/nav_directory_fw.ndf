@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nav-directory_file xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="nav-directory_file.xsd">
+  <lineage>
+    <id> my-trajectory_fw </id>
+  </lineage>
+  <input>
+    <options>
+      <op_file format="NAVEGA" version="1.0"> INS_GNSS_CC.op </op_file>
+    </options>
+    <metadata>
+      <nav_metadata> INS_GNSS_CC_01.nmd </nav_metadata>
+      <nav_metadata> INS_GNSS_CC_02.nmd </nav_metadata>
+    </metadata>
+    <observations>
+      <obs_e> INS_GNSS_CC.obs </obs_e>
+      <tr_obs_correlation_Rll> INS_GNSS_CC.rll </tr_obs_correlation_Rll>
+    </observations>
+    <instruments>
+      <obs_e> INS_GNSS.ins </obs_e>
+    </instruments>
+  </input>
+  <output>
+    <log> INS_GNSS_CC_fw.log </log>
+    <states>
+      <obs_e> INS_GNSS_CC_fw.par </obs_e>
+      <tr_states_correlation_Rxx> INS_GNSS_CC_fw.rxx </tr_states_correlation_Rxx>
+    </states>
+    <residuals>
+      <obs_e> INS_GNSS_CC_residuals_fw.res </obs_e>
+      <tr_res_correlation_Rvv> INS_GNSS_CC_res_fw.rvv </tr_res_correlation_Rvv>
+    </residuals>
+  </output>
+</nav-directory_file>

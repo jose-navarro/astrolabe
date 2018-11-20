@@ -1,0 +1,41 @@
+/** \page ASTROLABE_example_navigation_directory_file An ASTROLABE navigation directory file
+
+Below, a complete example of an ASTROLABE navigation directory file is included.
+
+\code
+<?xml version="1.0" encoding="UTF-8"?>
+<nav-directory_file xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="nav-directory_file.xsd">
+  <lineage>
+    <id> my-trajectory_bw </id>
+  </lineage>
+  <input>
+    <options>
+      <op_file format="NAVEGA" version="1.0"> INS_GNSS_CC.op </op_file>
+    </options>
+    <metadata>
+      <nav_metadata> INS_GNSS_CC_01.nmd </nav_metadata>
+      <nav_metadata> INS_GNSS_CC_02.nmd </nav_metadata>
+    </metadata>
+    <observations>
+      <obs_e> INS_GNSS_CC.obs </obs_e>
+      <tr_obs_correlation_Rll> INS_GNSS_CC.rll </tr_obs_correlation_Rll>
+    </observations>
+    <instruments>
+      <obs_e> INS_GNSS.ins </obs_e>
+    </instruments>
+  </input>
+  <output>
+    <log> INS_GNSS_CC_bw.log </log>
+    <states>
+      <obs_e> INS_GNSS_CC_bw.par </obs_e>
+      <tr_states_correlation_Rxx> INS_GNSS_CC_bw.rxx </tr_states_correlation_Rxx>
+    </states>
+    <residuals>
+      <obs_e> INS_GNSS_CC_residuals_bw.res </obs_e>
+      <tr_res_correlation_Rvv> INS_GNSS_CC_res_bw.rvv </tr_res_correlation_Rvv>
+    </residuals>
+  </output>
+</nav-directory_file>
+\endcode
+*/

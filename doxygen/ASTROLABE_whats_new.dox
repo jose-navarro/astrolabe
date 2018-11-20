@@ -1,0 +1,20 @@
+/** \page ASTROLABE_whats_new What's new in ASTROLABE
+
+- Version 0.99.1
+
+  - The dependencies to the general, DOMParser, str_util, and str_util_cpp libraries have been removed. The code (or subsets of the code) required has been included in the ASTROLABE library itself, renaming classes or methods to avoid name clashes if the aforementioned libraries where used in tandem with ASTROLABE itself.
+  - The open source libraries PracticalSocket and XTL have been included in ASTROLABE at source code level. Note that if an application linking to ASTROLABE needs to use also PracticalSocket or XTL, it will not be necessary to add these libraries to the project, since they are already included.
+  - Linux version available.
+
+- Version 0.99
+
+  - Coordinate reference frames, reference frames or coordinate system codes / combinations of these are now validated. See the documentation of classes gp_ref, gp_ref_code and gp_ref_code_element for further details on how retrieve the codes and their parameters once parsed.
+
+- Version 0.98
+
+  - The navigation directory (metadata) file is now available.
+  - Correlation matrix data: binary and socket readers and writers have been provided. The generic reader and writer classes for this kind of data now take these formats into account.
+  - Text files with embedded data have been removed from the ICD and therefore from the ASTROLABE library.
+  - The navigation file is now part of the library, so it is possible create or read (zip and unzip) these.
+  - Units are now checked (using the udunits2 library).
+*/

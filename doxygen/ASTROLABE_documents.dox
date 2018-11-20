@@ -1,0 +1,17 @@
+/** \page astrolabedocuments ASTROLABE documents
+
+The ASTROLABE data model and library are introduced in the paper:
+
+  - J. A. Navarro, M. E. Parés, I. Colomina, M. Blázquez. "ASTROLABE: A rigorous, geodetic-oriented data model for trajectory determination systems", ISPRS International Journal of Geo-Information, Vol. 6, No. 4, pp. 98, March 2017, http://www.mdpi.com/2220-9964/6/4/98. 
+ 
+The data model and the several interfaces implemented are defined in
+
+  - ASTROLABE (Version x) Interface Control Document (the ASTROLABE "ICD").
+
+where "Version x" stands for the current version of ASTROLABE.
+
+A copy of both documents should be present in the "docs" folder of the ASTROLABE distribution.
+
+Since ASTROLABE has evolved with time, differences between the paper and the ICD may show up. In these cases, the ICD is the reference to take.
+
+*/
