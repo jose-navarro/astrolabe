@@ -32,7 +32,7 @@ class v_buffer {
 	virtual void read(char* ptr, int size)=0;
 	virtual void write(char const* ptr, int size)=0;
 
-	virtual void* require(int size)=0;
+	virtual void* xtl_require(int size)=0;
 	virtual void flush()=0;
 };
 
@@ -45,7 +45,7 @@ class v_buffer_wrap: public v_buffer {
 	virtual void read(char* ptr, int size) {buf.read(ptr, size);}
 	virtual void write(char const* ptr, int size) {buf.write(ptr, size);}
 
-	virtual void* require(int size) {return buf.require(size);}
+	virtual void* xtl_require(int size) {return buf.xtl_require(size);}
 	virtual void flush() {buf.flush();}
 };
 
@@ -59,7 +59,7 @@ class v_mem_buffer: public v_buffer {
 	virtual void read(char* ptr, int size) {buf.read(ptr, size);}
 	virtual void write(char const* ptr, int size) {buf.write(ptr, size);}
 
-	virtual void* require(int size) {return buf.require(size);}
+	virtual void* xtl_require(int size) {return buf.xtl_require(size);}
 	virtual void flush() {buf.flush();}
 };
 

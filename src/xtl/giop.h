@@ -79,12 +79,12 @@ class GIOP_format: public generic_format<Buffer> {
 
 	char* req_align( int n ) {
 		int pad = padding( n );
-		return ( reinterpret_cast<char*>( this->require(n+pad) ) + pad );
+		return ( reinterpret_cast<char*>( this->xtl_require(n+pad) ) + pad );
 	}
 
 	char* des_align( int n ) {
 		int pad = padding( n );
-		return ( reinterpret_cast<char*>( this->desire(n+pad) ) + pad );
+		return ( reinterpret_cast<char*>( this->xtl_desire(n+pad) ) + pad );
 	}
 
 	inline void h2ns( short const* in, char out[2] )
@@ -152,9 +152,9 @@ class GIOP_format: public generic_format<Buffer> {
 	void input_raw(char* data, int size) {
 		int i;
 		for(i=0;i<(size>>8)-1;i++,data+=256)
-			std::memcpy(data, this->require(256), 256);
+			std::memcpy(data, this->xtl_require(256), 256);
 		int res=size-(i<<8);
-		std::memcpy(data, this->require(res), res);
+		std::memcpy(data, this->xtl_require(res), res);
 		align+=res;
 	}
 
@@ -201,9 +201,9 @@ class GIOP_format: public generic_format<Buffer> {
 	void output_raw(char const* data, int size) {
 		int i;
 		for(i=0;i<(size>>8)-1;i++,data+=256)
-			std::memcpy(this->desire(256), data, 256);
+			std::memcpy(this->xtl_desire(256), data, 256);
 		int res=size-(i<<8);
-		std::memcpy(this->desire(res), data, res);
+		std::memcpy(this->xtl_desire(res), data, res);
 		align+=res;
 	}
 };

@@ -81,10 +81,10 @@ class generic_format {
 private:
 	Buffer& buffer;
 protected:
-	void* require(int n)	{return buffer.require(n);}
-	void unrequire(int n)	{buffer.unrequire(n);}
-	void* desire(int n)	{return buffer.desire(n);}
-	void undesire(int n)	{buffer.undesire(n);}
+	void* xtl_require(int n)	{return buffer.xtl_require(n);}
+	void xtl_unrequire(int n)	{buffer.xtl_unrequire(n);}
+	void* xtl_desire(int n)	{return buffer.xtl_desire(n);}
+	void xtl_undesire(int n)	{buffer.xtl_undesire(n);}
 
 	void read(char* data, int size)		{buffer.read(data, size);}
 	void write(char const* data, int size)	{buffer.write(data, size);}
@@ -122,7 +122,7 @@ class raw_format: public generic_format<Buffer> {
 	
 	template <class T>
 	inline void input_simple(T& data)
-		{data=*((T*)this->require(sizeof(T)));}
+		{data=*((T*)this->xtl_require(sizeof(T)));}
 
 	template <class Idx>
 	void input_start_array(Idx& n) {input_simple(n);}
@@ -134,14 +134,14 @@ class raw_format: public generic_format<Buffer> {
 	void input_raw(char* data, int size) {
 		int i;
 		for(i=0;i<(size>>8)-1;i++,data+=256)
-			std::memcpy(data, this->require(256), 256);
+			std::memcpy(data, this->xtl_require(256), 256);
 		int res=size-(i<<8);
-		std::memcpy(data, this->require(res), res);
+		std::memcpy(data, this->xtl_require(res), res);
 	}
 
 	template <class T>
 	inline void output_simple(T const& data)
-		{*((T*)this->desire(sizeof(T)))=data;}
+		{*((T*)this->xtl_desire(sizeof(T)))=data;}
 
 	template <class Idx>
 	void output_start_array(Idx n) {output_simple(n);}
@@ -152,9 +152,9 @@ class raw_format: public generic_format<Buffer> {
 	void output_raw(char const* data, int size) {
 		int i;
 		for(i=0;i<(size>>8)-1;i++,data+=256)
-			std::memcpy(this->desire(256), data, 256);
+			std::memcpy(this->xtl_desire(256), data, 256);
 		int res=size-(i<<8);
-		std::memcpy(this->desire(res), data, res);
+		std::memcpy(this->xtl_desire(res), data, res);
 	}
 };
 
@@ -556,25 +556,25 @@ class mem_buffer {
 		buffer((char*)buf),ptr((char*)buf),lim(((char*)buf)+size) {}
 
 	inline void read(char* ptr, int size)
-		{std::memcpy(ptr, this->require(size), size);}
+		{std::memcpy(ptr, this->xtl_require(size), size);}
 	inline void write(char const* ptr, int size)
-		{std::memcpy(this->desire(size), ptr, size);}
+		{std::memcpy(this->xtl_desire(size), ptr, size);}
 
-	inline void* require(int size) {
+	inline void* xtl_require(int size) {
 		char* aux=ptr;
 		if ((ptr+=size)>lim)
 			throw buffer_overflow_error(lim-aux,size);
 		return aux;
 	}
-	inline void* desire(int size)
-		{return this->require(size);}
+	inline void* xtl_desire(int size)
+		{return this->xtl_require(size);}
 	inline void flush()
 		{}
 
-	inline void unrequire(int n)
+	inline void xtl_unrequire(int n)
 		{ptr-=n;}
-	inline void undesire(int n)
-		{unrequire(n);}
+	inline void xtl_undesire(int n)
+		{xtl_unrequire(n);}
 	inline void rewind()
 		{ptr=buffer;}
 	inline int size()

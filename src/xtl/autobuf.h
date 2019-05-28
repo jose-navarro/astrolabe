@@ -86,21 +86,21 @@ public:
 	}
 
 	inline void read(char* ptr, int size) {
-		memcpy(ptr, this->require(size), size);
+		memcpy(ptr, this->xtl_require(size), size);
 	}
 
 	inline void write(char const* ptr, int size) {
-		memcpy(this->desire(size), ptr, size);
+		memcpy(this->xtl_desire(size), ptr, size);
 	}
 
-	inline void* require(int size) {
+	inline void* xtl_require(int size) {
 		size_t aux = pos;
 		if ((pos += size) > lim)
 			throw buffer_overflow_error(lim - aux, size);
 		return buffer + aux;
 	}
 
-	inline void* desire(int size) {
+	inline void* xtl_desire(int size) {
 		size_t const aux = pos;
 		if ((pos += size) > lim) {
 			do {
@@ -117,10 +117,10 @@ public:
 	inline void flush()
 		{}
 
-	inline void unrequire(int n)
+	inline void xtl_unrequire(int n)
 		{ pos -= n; }
 
-	inline void undesire(int n)
+	inline void xtl_undesire(int n)
 		{ pos -= n; }
 
 	inline void rewind()

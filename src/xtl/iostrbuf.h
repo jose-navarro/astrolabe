@@ -55,13 +55,13 @@ class istream_buffer {
 		delete [] buffer;
 	}
 
-	inline void* require(int size) {
+	inline void* xtl_require(int size) {
 		buffer_require(size);
 		read(buffer, size);
 		return buffer;
 	}
 
-	inline void unrequire(int n) {
+	inline void xtl_unrequire(int n) {
 		stream.seekg(-n);
 	}
 };
@@ -106,7 +106,7 @@ class ostream_buffer {
 		delete [] buffer;
 	}
 
-	inline void* desire(int size) {
+	inline void* xtl_desire(int size) {
 		flush_buffer();
 		buffer_require(size);
 		write_bytes = size;
@@ -118,7 +118,7 @@ class ostream_buffer {
 		stream.flush();
 	}
 
-	inline void undesire(int n) {
+	inline void xtl_undesire(int n) {
 		flush_buffer();
 		stream.seekp(-n);
 	}
