@@ -468,26 +468,34 @@ const
 {
   char *trimmedText;
 
-  if (node==NULL) return NULL; // EXCEPTION!!!
+  if (node == NULL) return NULL; // EXCEPTION!!!
 
   {
     const char* no_text = "";
     char*       text;
     char*       trimText;
 
-    text = (char*) XMLString::transcode((node->getFirstChild())->getNodeValue());
-    trimText = astr_trim_whitespace(text);
-    if (trimText == NULL)
+    if (NULL == node->getFirstChild ())
     {
-      trimmedText = strdup(no_text);
+      trimText = NULL;
     }
     else
     {
-      trimmedText = strdup(trimText);
-      free(trimText);
+      text = (char*)XMLString::transcode ((node->getFirstChild ())->getNodeValue ());
+      trimText = astr_trim_whitespace (text);
+      XMLString::release (&text);
+    }
+
+    if (trimText == NULL)
+    {
+      trimmedText = strdup (no_text);
+    }
+    else
+    {
+      trimmedText = strdup (trimText);
+      free (trimText);
       trimText = NULL;
     }
-    XMLString::release(&text);
   }
 
   return trimmedText;
