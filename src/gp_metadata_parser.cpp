@@ -648,6 +648,8 @@ validate_semantics
     //     won't ask for these.
     //
 
+    /*
+
     if ((metadata_->get_dim_lspec() == 0) ||
         (metadata_->get_dim_pspec() == 0) ||
         (metadata_->get_dim_mspec() == 0))
@@ -664,6 +666,7 @@ validate_semantics
       list_of_errors_.push_back(error_message);
 
     }
+    */
 
     //
     // --- Check that no repeated identifiers are used for i_spec, l_spec
